@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nobroker</title>
+   <link href="style.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css2?family=Delius&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+       <div class="logo">
+      <img src="/asessts/nobroker logo.svg" alt="NoBroker Logo" >
+    </div>
+    <div class="navbar-right">
+      <button class="btn outline"><img src="/asessts/payrent.png"> | Pay rent</button>
+      <button class="btn solid"><a href="Post-properties.html" target="_blank">Post Your Properties</a></button>
+
+    <!-- signup -->
+<a id="openLogin">Login</a>
+<span class="divider">|</span>
+<a id="openSignup">Sign Up</a>
+
+<!-- login modal -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" id="closeLoginModal">&times;</span>
+    <h2>Login</h2>
+    <label for="loginNumber">Mobile Number:</label>
+    <input type="text" id="loginNumber" placeholder="Enter your Mobile Number" class="modal-input" required>
+    <button class="modal-btn" id="loginContinue">Continue</button>
+    <p class="modal-note">OTP will be sent to your number</p>
+  </div>
+</div>
+
+<!-- signup modal -->
+<div id="signupModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" id="closeSignupModal">&times;</span>
+    <h2>Sign Up</h2>
+    <label for="Name">Full Name:</label>
+    <input type="text" id="Name" placeholder="Enter your Full Name" class="modal-input" required>
+    <label for="Email">Email:</label>
+    <input type="email" id="Email" placeholder="Enter your Email" class="modal-input" required>
+    <label for="Number">Mobile Number:</label>
+    <input type="text" id="Number" placeholder="Enter your Mobile Number" class="modal-input" required>
+    <button class="modal-btn" id="Create">Create Account</button>
+  </div>
+</div>
+
+<div id="profileOptions" class="profile-options" style="display:none;">
+  <span class="profile-name" id="profileName">User</span>
+  <div class="dropdown">
+    <div class="dropdown-content">
+      <a href="#" id="logoutBtn">Logout</a>
+    </div>
+  </div>
+</div>
+      <span class="divider">|</span>
+      <a>☰ Menu</a>
+      <div id="sideMenu" class="side-menu">
+  <div class="side-menu-header">
+    <span id="closeSideMenu" class="close-side-menu">&times;</span>
+    <div class="profile-section">
+      <div class="profile-avatar">👤</div>
+      <div class="profile-info">
+        <span id="sidebarProfileName">User</span>
+        <span id="sidebarVerified" style="color:#009688;display:none;" title="Premium Verified">&#10004;</span>
+      </div>
+    </div>
+  </div>
+  <ul class="side-menu-list">
+    <li><a href="#" id="sidebarStats">📊 Stats</a></li>
+    <li><a href="#" id="sidebarConnections">🔗 Connections</a></li>
+  </ul>
+  <div id="sidebarConnectionsPanel" class="sidebar-panel" style="display:none;">
+    <h4>Your Connections</h4>
+    <ul id="connectionsList">
+      <!-- Contacted users will appear here -->
+    </ul>
+  </div>
+  <div id="sidebarStatsPanel" class="sidebar-panel" style="display:none;">
+    <h4>Your Stats</h4>
+    <ul>
+      <li>Total Listings: <span id="statListings">3</span></li>
+      <li>Contacts Received: <span id="statContacts">0</span></li>
+      <li>Visits Scheduled: <span id="statVisits">0</span></li>
+    </ul>
+  </div>
+</div>
+    </div>
+
+  </header> 
+  <!-- end -->
+   <div class="sticky-filters">
+    <label>Area: <input type="text" id="filter-area" placeholder="e.g. Andheri East"></label>
+    <label>BHK:
+      <select id="filter-bhk">
+        <option value="">Any</option>
+        <option>1 BHK</option>
+        <option>2 BHK</option>
+        <option>3 BHK</option>
+        <option>4+ BHK</option>
+      </select>
+    </label>
+    <label>Budget:
+      <input type="number" id="filter-min" placeholder="Min ₹" style="width:90px;">
+      –
+      <input type="number" id="filter-max" placeholder="Max ₹" style="width:90px;">
+    </label>
+    <label>Type:
+      <select id="filter-type">
+        <option value="">Any</option>
+        <option>Apartment</option>
+        <option>Villa</option>
+        <option>Independent House</option>
+      </select>
+    </label>
+    <div class="advanced-filters">
+      <label><input type="checkbox" id="filter-verified"> Verified Owners Only</label>
+      <button class="premium-toggle" id="filter-premium">Only Premium Listings</button>
+      <label>Posted Within:
+        <select id="filter-posted">
+          <option value="">Anytime</option>
+          <option value="24">24 hrs</option>
+          <option value="72">3 days</option>
+          <option value="168">7 days</option>
+        </select>
+      </label>
+      <label><input type="checkbox" id="filter-distance"> Near Metro/Station</label>
+    </div>
+    <button id="rentTrendbtn" class="trendbtn">📈 View Rent Trend</button>
+  </div>
+
+  <!-- Property Cards Grid -->
+  <div class="property-list" id="property-list">
+    <!--Premium Card -->
+    <div class="property-card premium">
+      <div class="carousel">
+        <img src="https://i.pinimg.com/736x/19/fc/fb/19fcfbb5debcb7d95a5f73a556a54b39.jpg" alt="Property 1">
+      </div>
+      <div class="property-details">
+        <div class="property-title">3 BHK in Andheri East <span style="color:#009688;">| ₹55,000/mo</span></div>
+        <div class="owner-row">
+          Owner: Ramesh <span class="verified" title="Verified">&#10004;</span>
+          <span class="premium-badge">Premium</span>
+        </div>
+        <div class="property-meta">📍 Near Western Express Highway Metro</div>
+        <p><b>Carpet Area:</b> 233 sq.ft</p>
+        <div class="views-row">🔺 112 views</div>
+        <div class="property-actions">
+          <button class="primary">📞 Contact Now</button>
+          <a href="#" class="save-link">💾 Save</a>
+          <a href="#" class="share-link">🔄 Share</a>
+          <a href="#" class="map-link">📍Map</a>
+        </div>
+      </div>
+    </div>
+    <!--Non-Premium Card -->
+    <div class="property-card">
+      <div class="carousel">
+        <img src="https://i.pinimg.com/736x/dd/1c/ff/dd1cff06e41bbe14fd715dd01edff398.jpg" alt="Property 2">
+      </div>
+      <div class="property-details">
+        <div class="property-title">2 BHK in Bandra West <span style="color:#009688;">| ₹42,000/mo</span></div>
+        <div class="owner-row">
+          Owner: Priya <span class="verified" title="Verified">&#10004;</span>
+        </div>
+        <div class="property-meta">📍 Near Bandra Market</div>
+        <p><b>Carpet Area:</b> 233 sq.ft</p>
+        <div class="views-row">🔺 89 views</div>
+        <div class="property-actions">
+          <button class="primary">📞 Contact Now</button>
+          <a href="#" class="save-link">💾 Save</a>
+          <a href="#" class="share-link">🔄 Share</a>
+          <a href="#" class="map-link">📍Map</a>
+        </div>
+      </div>
+    </div>
+     <div class="property-card premium">
+      <div class="carousel">
+        <img src="https://i.pinimg.com/736x/af/70/64/af706475cbe5f9bab81b7c4376da127d.jpg" alt="Property 1">
+      </div>
+      <div class="property-details">
+        <div class="property-title">4 BHK in Yogi Dham, Kalyan West <span style="color:#009688;">| ₹25,000/mo</span></div>
+        <div class="owner-row">
+          Owner: Kumar <span class="verified" title="Verified">&#10004;</span>
+          <span class="premium-badge">Premium</span>
+        </div>
+        <div class="property-meta">📍 Near City park</div>
+        <p><b>Carpet Area:</b> 233 sq.ft</p>
+        <div class="views-row">🔺 382 views</div>
+        <div class="property-actions">
+          <button class="primary">📞 Contact Now</button>
+          <a href="#" class="save-link">💾 Save</a>
+          <a href="#" class="share-link">🔄 Share</a>
+          <a href="#" class="map-link">📍Map</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card">
+      <div class="carousel">
+        <img src="https://i.pinimg.com/736x/a6/e8/c3/a6e8c32546ae4a5c6417164fdac0af2a.jpg" alt="Property 2">
+      </div>
+      <div class="property-details">
+        <div class="property-title">1 BHK in Hanuman nagar, Thane  <span style="color:#009688;">| ₹22,000/mo</span></div>
+        <div class="owner-row">
+          Owner: Priyadarshini 
+        </div>
+        <div class="property-meta">📍 Near Metro Station</div>
+        <p><b>Carpet Area:</b> 233 sq.ft</p>
+        <div class="views-row">🔺 109 views</div>
+        <div class="property-actions">
+          <button class="primary">📞 Contact Now</button>
+          <a href="#" class="save-link">💾 Save</a>
+          <a href="#" class="share-link">🔄 Share</a>
+          <a href="#" class="map-link">📍Map</a>
+        </div>
+      </div>
+    </div>
+     <div class="property-card premium">
+      <div class="carousel">
+        <img src="https://i.pinimg.com/736x/19/fc/fb/19fcfbb5debcb7d95a5f73a556a54b39.jpg" alt="Property 1">
+      </div>
+      <div class="property-details">
+        <div class="property-title">2 BHK in Shahad, Kalyan West <span style="color:#009688;">| ₹25,000/mo</span></div>
+        <div class="owner-row">
+          Owner: Sakshi <span class="verified" title="Verified">&#10004;</span>
+          <span class="premium-badge">Premium</span>
+        </div>
+        <div class="property-meta">📍 Near Shahad Bridge</div>
+        <p><b>Carpet Area:</b> 233 sq.ft</p>
+        <div class="views-row">🔺 352 views</div>
+        <div class="property-actions">
+          <button class="primary">📞 Contact Now</button>
+          <a href="#" class="save-link">💾 Save</a>
+          <a href="#" class="share-link">🔄 Share</a>
+          <a href="#" class="map-link">📍Map</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card premium">
+      <div class="carousel">
+        <img src="https://i.pinimg.com/736x/19/fc/fb/19fcfbb5debcb7d95a5f73a556a54b39.jpg" alt="Property 1">
+      </div>
+      <div class="property-details">
+        <div class="property-title">4+ BHK in Khadakpada, Kalyan West <span style="color:#009688;">| ₹85,000/mo</span></div>
+        <div class="owner-row">
+          Owner: Sakshi <span class="verified" title="Verified">&#10004;</span>
+          <span class="premium-badge">Premium</span>
+        </div>
+        <div class="property-meta">📍 Near Reliance</div>
+        <p><b>Carpet Area:</b> 233 sq.ft</p>
+        <div class="views-row">🔺 1052 views</div>
+        <div class="property-actions">
+          <button class="primary">📞 Contact Now</button>
+          <a href="#" class="save-link">💾 Save</a>
+          <a href="#" class="share-link">🔄 Share</a>
+          <a href="#" class="map-link">📍Map</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="property-card premium">
+      <div class="carousel">
+        <img src="https://i.pinimg.com/736x/19/fc/fb/19fcfbb5debcb7d95a5f73a556a54b39.jpg" alt="Property 1">
+      </div>
+      <div class="property-details">
+        <div class="property-title">1 BHK in Ganpat nagar, Andheri East <span style="color:#009688;">| ₹15,000/mo</span></div>
+        <div class="owner-row">
+          Owner: Saksham <span class="verified" title="Verified">&#10004;</span>
+          <span class="premium-badge">Premium</span>
+        </div>
+        <div class="property-meta">📍 Near Metro Junction Mall</div>
+        <p><b>Carpet Area:</b> 233 sq.ft</p>
+        <div class="views-row">🔺 652 views</div>
+        <div class="property-actions">
+          <button class="primary">📞 Contact Now</button>
+          <a href="#" class="save-link">💾 Save</a>
+          <a href="#" class="share-link">🔄 Share</a>
+          <a href="#" class="map-link">📍Map</a>
+        </div>
+      </div>
+    </div>
+<div class="property-card">
+      <div class="carousel">
+        <img src="https://i.pinimg.com/736x/a6/e8/c3/a6e8c32546ae4a5c6417164fdac0af2a.jpg" alt="Property 2">
+      </div>
+      <div class="property-details">
+        <div class="property-title">1 BHK in Hanuman nagar, Thane  <span style="color:#009688;">| ₹22,000/mo</span></div>
+        <div class="owner-row">
+          Owner: Priyadarshini 
+        </div>
+        <div class="property-meta">📍 Near Metro Station</div>
+        <p><b>Carpet Area:</b> 233 sq.ft</p>
+        <div class="views-row">🔺 109 views</div>
+        <div class="property-actions">
+          <button class="primary">📞 Contact Now</button>
+          <a href="#" class="save-link">💾 Save</a>
+          <a href="#" class="share-link">🔄 Share</a>
+          <a href="#" class="map-link">📍Map</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card">
+      <div class="carousel">
+        <img src="https://i.pinimg.com/736x/a6/e8/c3/a6e8c32546ae4a5c6417164fdac0af2a.jpg" alt="Property 2">
+      </div>
+      <div class="property-details">
+        <div class="property-title">2 BHK in Hanuman nagar, Thane  <span style="color:#009688;">| ₹42,000/mo</span></div>
+        <div class="owner-row">
+          Owner: Priyadarshini 
+        </div>
+        <div class="property-meta">📍 Near Metro Station</div>
+        <p><b>Carpet Area:</b> 233 sq.ft</p>
+        <div class="views-row">🔺 1039 views</div>
+        <div class="property-actions">
+          <button class="primary">📞 Contact Now</button>
+          <a href="#" class="save-link">💾 Save</a>
+          <a href="#" class="share-link">🔄 Share</a>
+          <a href="#" class="map-link">📍Map</a>
+        </div>
+      </div>
+    </div>
+<div class="property-card">
+      <div class="carousel">
+        <img src="https://i.pinimg.com/736x/a6/e8/c3/a6e8c32546ae4a5c6417164fdac0af2a.jpg" alt="Property 2">
+      </div>
+      <div class="property-details">
+        <div class="property-title">1,2,3,4 BHK in Hanuman nagar, Thane  <span style="color:#009688;">| ₹22,000/mo - ₹72,000/mo </span></div>
+        <div class="owner-row">
+          Owner: Shreya Ghoshal <span class="verified" title="Verified">&#10004;</span>
+        </div>
+        <div class="property-meta">📍 Near Metro Station</div>
+        <p><b>Carpet Area:</b> 233 sq.ft</p>
+        <div class="views-row">🔺 109 views</div>
+        <div class="property-actions">
+          <button class="primary">📞 Contact Now</button>
+          <a href="#" class="save-link">💾 Save</a>
+          <a href="#" class="share-link">🔄 Share</a>
+          <a href="#" class="map-link">📍Map</a>
+        </div>
+      </div>
+    </div> 
+     <div class="property-card premium">
+      <div class="carousel">
+        <img src="https://i.pinimg.com/736x/19/fc/fb/19fcfbb5debcb7d95a5f73a556a54b39.jpg" alt="Property 1">
+      </div>
+      <div class="property-details">
+        <div class="property-title">1,2,3,4 BHK in Andheri East <span style="color:#009688;">| ₹55,000/mo</span></div>
+        <div class="owner-row">
+          Owner: Ramesh <span class="verified" title="Verified">&#10004;</span>
+          <span class="premium-badge">Premium</span>
+        </div>
+        <div class="property-meta">📍 Near Western Express Highway Metro</div>
+        <p><b>Carpet Area:</b> 233 sq.ft</p>
+        <div class="views-row">🔺 1124 views</div>
+        <div class="property-actions">
+          <button class="primary">📞 Contact Now</button>
+          <a href="#" class="save-link">💾 Save</a>
+          <a href="#" class="share-link">🔄 Share</a>
+          <a href="#" class="map-link">📍Map</a>
+        </div>
+      </div>
+    </div>
+     <div class="property-card">
+      <div class="carousel">
+        <img src="https://i.pinimg.com/736x/a6/e8/c3/a6e8c32546ae4a5c6417164fdac0af2a.jpg" alt="Property 2">
+      </div>
+      <div class="property-details">
+        <div class="property-title">2 BHK in Hanuman nagar, Andheri <span style="color:#009688;">| ₹42,000/mo - ₹1,00,000/mo</span></div>
+        <div class="owner-row">
+          Owner: Priyadarshini 
+        </div>
+        <div class="property-meta">📍 Near Metro Station</div>
+        <p><b>Carpet Area:</b> 232.sq.ft</p>
+        <div class="views-row">🔺 1039 views</div>
+        <div class="property-actions">
+          <button class="primary">📞 Contact Now</button>
+          <a href="#" class="save-link">💾 Save</a>
+          <a href="#" class="share-link">🔄 Share</a>
+          <a href="#" class="map-link">📍Map</a>
+        </div>
+      </div>
+    </div>
+
+  <div class="property-card">
+      <div class="carousel">
+        <img src="https://i.pinimg.com/736x/a6/e8/c3/a6e8c32546ae4a5c6417164fdac0af2a.jpg" alt="Property 2">
+      </div>
+      <div class="property-details">
+        <div class="property-title">2 BHK in Gholap nagar, Shahad, Kalyan  <span style="color:#009688;">| ₹22,000/mo</span></div>
+        <div class="owner-row">
+          Owner: Kumar
+        </div>
+        <div class="property-meta">📍 Near Metro Station</div>
+        <p><b>Carpet Area:</b> 233 sq.ft</p>
+        <div class="views-row">🔺 109 views</div>
+        <div class="property-actions">
+          <button class="primary">📞 Contact Now</button>
+          <a href="#" class="save-link">💾 Save</a>
+          <a href="#" class="share-link">🔄 Share</a>
+          <a href="#" class="map-link">📍Map</a>
+        </div>
+      </div>
+
+  </div>
+ <div id="contactModal" class="modal" style="display:none;">
+  <div class="modal-content" style="max-width:420px;">
+    <span class="close-btn" id="closeContactModal" style="float:right;cursor:pointer;font-size:1.5rem;">&times;</span>
+    <h3 style="color:#009688;text-align:center;margin-bottom:1rem;">Connect with Owner/Tenant</h3>
+    <div id="modalPropertyInfo" style="background:#f7f8fa;padding:0.7rem 1rem;border-radius:8px;margin-bottom:1rem;">
+      <!-- Property info will be injected here -->
+    </div>
+    <form id="chatCallVisitForm" autocomplete="off">
+      <div class="form-row">
+        <label for="contactType">I want to:</label>
+        <select id="contactType" name="contactType" required>
+          <option value="chat">Chat</option>
+          <option value="call">Request a Call</option>
+          <option value="visit">Schedule Property Visit</option>
+        </select>
+      </div>
+      <div class="form-row" id="visitDateRow" style="display:none;">
+        <label for="visitDate">Preferred Visit Date & Time:</label>
+        <input type="datetime-local" id="visitDate" name="visitDate">
+      </div>
+      <div class="form-row">
+        <label for="docUpload">Upload ID/Document (optional):</label>
+        <input type="file" id="docUpload" name="docUpload" accept=".pdf,.jpg,.jpeg,.png">
+      </div>
+      <div class="form-row">
+        <label for="message">Message (optional):</label>
+        <textarea id="message" name="message" rows="2" placeholder="Type your message..."></textarea>
+      </div>
+      <button type="submit" class="contact-btn">Send Request</button>
+    </form>
+    <div id="contactRequestSuccess" class="contact-success">
+      Your request has been sent! The owner/tenant will contact you soon.
+    </div>
+  </div>
+</div> 
+
+  <!-- Smart Suggestions -->
+  <section class="suggestions-section">
+    <h4>Smart Suggestions for You</h4>
+    <div class="suggestion-list">
+      <div class="suggestion-card">Properties users like you viewed: <b>2BHK in Bandra</b></div>
+      <div class="suggestion-card">Owners who replied fast in this area</div>
+      <div class="suggestion-card">"Based on your search: 2BHK in Bandra"</div>
+    </div>
+  </section>
+  
+
+<script src="script.js"></script>
+  </body>
+  </html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nobroker</title>
+   <link href="style.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css2?family=Delius&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+       <div class="logo">
+      <img src="/asessts/nobroker logo.svg" alt="NoBroker Logo" >
+    </div>
+    <div class="navbar-right">
+      <button class="btn outline"><img src="/asessts/payrent.png"> | Pay rent</button>
+      <button class="btn solid"><a href="Post-properties.html" target="_blank">Post Your Properties</a></button>
+
+    <!-- signup -->
+<a id="openLogin">Login</a>
+<span class="divider">|</span>
+<a id="openSignup">Sign Up</a>
+
+<!-- login modal -->
+
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" id="closeLoginModal">&times;</span>
+    <h2>Login</h2>
+    <label for="loginNumber">Mobile Number:</label>
+    <input type="text" id="loginNumber" placeholder="Enter your Mobile Number" class="modal-input" required>
+    <button class="modal-btn" id="loginContinue">Continue</button>
+    <p class="modal-note">OTP will be sent to your number</p>
+  </div>
+</div>
+
+<!-- signup modal -->
+<div id="signupModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" id="closeSignupModal">&times;</span>
+    <h2>Sign Up</h2>
+    <label for="Name">Full Name:</label>
+    <input type="text" id="Name" placeholder="Enter your Full Name" class="modal-input" required>
+    <label for="Email">Email:</label>
+    <input type="email" id="Email" placeholder="Enter your Email" class="modal-input" required>
+    <label for="Number">Mobile Number:</label>
+    <input type="text" id="Number" placeholder="Enter your Mobile Number" class="modal-input" required>
+    <button class="modal-btn" id="Create">Create Account</button>
+  </div>
+</div>
+
+<div id="profileOptions" class="profile-options" style="display:none;">
+  <span class="profile-name" id="profileName">User</span>
+  <div class="dropdown">
+    <div class="dropdown-content">
+      <a href="#" id="logoutBtn">Logout</a>
+    </div>
+  </div>
+</div>
+<!-- end -->
+      <span class="divider">|</span>
+      <a>☰ Menu</a>
+    </div>
+    
+  </header>
+<section class="property-post-section">
+  <div class="multi-step-form">
+<!-- Example for all steps -->
+
+<div class="multi-step-form">
+  <nav class="form-sidebar">
+    <ul>
+      <li class="active" data-step="1">Property Details</li>
+      <li data-step="2">Locality Details</li>
+      <li data-step="3">Rental Details</li>
+      <li data-step="4">Amenities</li>
+      <li data-step="5">Property Photos</li>
+    </ul>
+  </nav>
+  <div class="form-main">
+    <form id="step-1" class="step-form">
+      <h3>Property Details</h3>
+      <div class="form-grid">
+        <!-- Your fields here -->
+        <label>Apartment Type* <select required><option value="">Select</option><option>Apartment</option></select></label>
+        <label>Apartment Name* <input type="text" required></label>
+        <label>BHK Type* <select required><option value="">Select</option><option>1 RK</option></select></label>
+        <label>Floor* <input type="number" min="1" required></label>
+        <label>Total Floor* <input type="number" min="1" required></label>
+        <label>Property Age* <select required><option value="">Select</option><option>More than 10 year</option></select></label>
+        <label>Facing <select><option>East</option></select></label>
+        <label>Built Up Area* <input type="number" required> Sq.ft</label>
+      </div>
+      <div class="help-strip">
+        <span>📞 Don’t want to fill all the details? Let us help you!</span>
+        <button type="button" class="interested-btn">I’m interested</button>
+      </div>
+      <button type="submit" class="save-btn">Save & Continue</button>
+    </form>
+  </div>
+</div>
+ 
+ <!-- Step 2: Locality Details -->
+<form id="step-2" class="step-form" style="display:none;">
+  <h3>Locality Details</h3>
+  <div class="form-grid">
+    <label>City*
+      <select required>
+        <option value="">Select City</option>
+        <option>Mumbai</option>
+        <option>Pune</option>
+        <option>Bangalore</option>
+      </select>
+    </label>
+    <label>Locality*
+      <input type="text" placeholder="Enter location / society name" required>
+      <span class="use-location">
+        <img src="https://img.icons8.com/ios-filled/16/009688/marker.png">
+        Use Current Location
+      </span>
+    </label>
+    <label class="full-width">Landmark / Street*
+      <input type="text" placeholder="e.g. Evergreen street" required>
+    </label>
+  </div>
+  <div class="map-section">
+    <div class="map-title">
+      <img src="https://img.icons8.com/ios/20/000000/marker--v1.png">
+      <b>Mark Locality on Map</b>
+    </div>
+    <div class="map-desc">
+      Set property location by using search box and move the map
+    </div>
+    <div class="map-embed">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60271.51340726593!2d73.08934404890246!3d19.240157141449657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be796f457b1b76f%3A0x35df463ca445bd26!2sKalyan%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1749978989952!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+  <div class="help-strip">
+    <span>📞 Don’t want to fill all the details? Let us help you!</span>
+    <button type="button" class="interested-btn">I’m interested</button>
+  </div>
+  <div class="form-actions">
+    <button type="button" class="save-btn back-btn" onclick="goBackStep()">Back</button>
+    <button type="submit" class="save-btn">Save & Continue</button>
+  </div>
+</form>
+
+<!-- Step 3: Rental Details -->
+<form id="step-3" class="step-form" style="display:none;">
+  <h3 class="step-title">Provide rental details about your property</h3>
+  <div class="form-grid">
+    <label class="full-width">Property available for</label>
+    <div class="radio-group full-width">
+      <label><input type="radio" name="rentType" checked> Only rent</label>
+      <label><input type="radio" name="rentType"> Only lease</label>
+    </div>
+    <label>Expected Rent*<br>
+      <div class="input-group">
+        <span class="input-prefix">₹</span>
+        <input type="number" required placeholder="Enter Amount">
+        <span class="input-suffix">/ Month</span>
+      </div>
+      <div class="checkbox-group">
+        <label>
+          <input type="checkbox">Rent Negotiable
+        </label>
+      </div>
+    </label>
+    <label>Expected Deposit*<br>
+      <div class="input-group">
+        <span class="input-prefix">₹</span>
+        <input type="number" required placeholder="Enter Amount">
+      </div>
+    </label>
+    <label>Monthly Maintenance<br>
+      <select>
+        <option>Select</option>
+        <option>0</option>
+        <option>500</option>
+        <option>1000</option>
+        <option>2000</option>
+      </select>
+    </label>
+    <label>Available From*<br>
+      <input type="date" required>
+    </label>
+    <label class="full-width">Preferred Tenants*<br>
+      <div class="checkbox-group">
+        <label><input type="checkbox"> Anyone</label>
+        <label><input type="checkbox"> Family</label>
+        <label><input type="checkbox"> Bachelor Female</label>
+        <label><input type="checkbox"> Bachelor Male</label>
+        <label><input type="checkbox"> Company</label>
+      </div>
+    </label>
+    <label>Furnishing*<br>
+      <select required>
+        <option>Select</option>
+        <option>Fully Furnished</option>
+        <option>Semi Furnished</option>
+        <option>Unfurnished</option>
+      </select>
+    </label>
+    <label>Parking*<br>
+      <select required>
+        <option>Select</option>
+        <option>Car</option>
+        <option>Bike</option>
+        <option>Both</option>
+        <option>None</option>
+      </select>
+    </label>
+    <label class="full-width">Description<br>
+      <textarea rows="3" placeholder="Write a few lines about your property something which is special and makes your property stand out. Please do not mention your contact details in any format."></textarea>
+    </label>
+  </div>
+  <div class="form-actions">
+    <button type="button" class="save-btn back-btn" onclick="goBackStep()">Back</button>
+    <button type="submit" class="save-btn">Save & Continue</button>
+  </div>
+</form>
+<script src="script.js"></script>
+  </body>
+  </html>

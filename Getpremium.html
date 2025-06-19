@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nobroker</title>
+   <link href="style.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css2?family=Delius&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+       <div class="logo">
+      <img src="/asessts/nobroker logo.svg" alt="NoBroker Logo" >
+    </div>
+    <div class="navbar-right">
+      <button class="btn outline"><img src="/asessts/payrent.png"> | Manage Rent</button>
+      <button class="btn solid"><a href="Post-properties.html" target="_blank">Post Your Properties</a></button>
+
+    <!-- signup -->
+<a id="openLogin">Login</a>
+<span class="divider">|</span>
+<a id="openSignup">Sign Up</a>
+
+<!-- login modal -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" id="closeLoginModal">&times;</span>
+    <h2>Login</h2>
+    <label for="loginNumber">Mobile Number:</label>
+    <input type="text" id="loginNumber" placeholder="Enter your Mobile Number" class="modal-input" required>
+    <button class="modal-btn" id="loginContinue">Continue</button>
+    <p class="modal-note">OTP will be sent to your number</p>
+  </div>
+</div>
+
+<!-- signup modal -->
+<div id="signupModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" id="closeSignupModal">&times;</span>
+    <h2>Sign Up</h2>
+    <label for="Name">Full Name:</label>
+    <input type="text" id="Name" placeholder="Enter your Full Name" class="modal-input" required>
+    <label for="Email">Email:</label>
+    <input type="email" id="Email" placeholder="Enter your Email" class="modal-input" required>
+    <label for="Number">Mobile Number:</label>
+    <input type="text" id="Number" placeholder="Enter your Mobile Number" class="modal-input" required>
+    <button class="modal-btn" id="Create">Create Account</button>
+  </div>
+</div>
+
+<div id="profileOptions" class="profile-options" style="display:none;">
+  <span class="profile-name" id="profileName">User</span>
+  <div class="dropdown">
+    <div class="dropdown-content">
+      <a href="#" id="logoutBtn">Logout</a>
+    </div>
+  </div>
+</div>
+<!-- end -->
+      <span class="divider">|</span>
+      <a>☰ Menu</a>
+    </div>
+  </header>
+  <!-- End of Header -->
+
+  <!-- Premium plan Upgrade section -->
+
+
+   <section class="pricing-section">
+    <h2>Choose Your Premium Plan</h2>
+    <div class="pricing-container">
+      <!-- Owner Premium -->
+      <div class="plan-card" data-plan="owner">
+        <h3>Owner Premium Lite</h3>
+        <p class="price">₹299 <span style="font-size:1rem;font-weight:400;">/ 30 days</span></p>
+        <ul>
+          <li>✅ Unlimited Leads</li>
+          <li>📈 Weekly Stats Summary</li>
+          <li>⭐ Promoted Listing</li>
+          <li>🔝 Higher Search Ranking</li>
+          <li>📲 WhatsApp Alerts</li>
+        </ul>
+        <button class="select-btn">Upgrade Now</button>
+        <div class="addon">+ ₹49: Auto-refresh listing weekly (optional)</div>
+      </div>
+      <!-- Seeker Premium -->
+      <div class="plan-card" data-plan="seeker">
+        <h3>Seeker Premium Lite</h3>
+        <p class="price">₹199 <span style="font-size:1rem;font-weight:400;">/ 15 days</span></p>
+        <ul>
+          <li>📞 Unlimited Owner Contacts</li>
+          <li>🔓 Access Premium Listings</li>
+          <li>🔔 Search Alerts</li>
+          <li>🚫 No Ads</li>
+          <li>⏩ Early Access</li>
+        </ul>
+        <button class="select-btn">Go Premium</button>
+      </div>
+    </div>
+    <div class="trial-banner">
+      🎁 <b>First-time user?</b> Enjoy <span style="color:#e11d48;">1-day Premium trial</span> on us!
+    </div>
+  </section>
+
+   <section class="comparison-section">
+    <h3>Compare Free vs Premium</h3>
+    <table class="comparison-table">
+      <tr>
+        <th>Plan Type</th>
+        <th>Feature</th>
+        <th>Free</th>
+        <th>Premium</th>
+      </tr>
+      <tr>
+        <td>Owner</td>
+        <td>Property Upload</td>
+        <td><span class="tick">✅</span></td>
+        <td><span class="tick">✅</span></td>
+      </tr>
+      <tr>
+        <td>Owner</td>
+        <td>Listing Boost</td>
+        <td><span class="cross">❌</span></td>
+        <td><span class="tick">✅</span></td>
+      </tr>
+      <tr>
+        <td>Owner</td>
+        <td>Lead View Limit</td>
+        <td><span class="cross">❌</span></td>
+        <td><span class="tick">✅ (Unlimited)</span></td>
+      </tr>
+      <tr>
+        <td>Seeker</td>
+        <td>View Listings</td>
+        <td><span class="tick">✅</span></td>
+        <td><span class="tick">✅</span></td>
+      </tr>
+      <tr>
+        <td>Seeker</td>
+        <td>Contact Limit</td>
+        <td>3/day</td>
+        <td><span class="tick">Unlimited</span></td>
+      </tr>
+      <tr>
+        <td>Seeker</td>
+        <td>Access Premium Listings</td>
+        <td><span class="cross">❌</span></td>
+        <td><span class="tick">✅</span></td>
+      </tr>
+    </table>
+  </section>
+   <section class="testimonial-section">
+    <h3>Success Stories <span style="font-weight:400;color:#444;">(92% users found a match within 2 weeks!)</span></h3>
+    <div class="testimonials">
+      <div class="testimonial">
+        <span class="stars">★★★★★</span>
+        “I listed my flat with Owner Premium and got 8 leads in 3 days. The WhatsApp alerts are super helpful!”
+        <div class="author">– Priya S., Mumbai</div>
+      </div>
+      <div class="testimonial">
+        <span class="stars">★★★★★</span>
+        “Seeker Premium let me contact unlimited owners and I found my dream home in a week. Worth every rupee!”
+        <div class="author">– Rahul K., Bangalore</div>
+      </div>
+      <div class="testimonial">
+        <span class="stars">★★★★★</span>
+        “The 1-day trial convinced me to upgrade. No spam, just genuine leads. Highly recommended.”
+        <div class="author">– Anjali M., Pune</div>
+      </div>
+    </div>
+  </section>
+  <!-- Terms and Conditions Section -->
+  <section class="terms-section">
+    <h3>Terms &amp; Conditions</h3>
+    <ul class="terms-list">
+      <li>Premium plans are non-refundable and non-transferable once purchased.</li>
+      <li>Owner Premium Lite allows unlimited lead viewing for 30 days from the date of activation.</li>
+      <li>Seeker Premium Lite allows unlimited owner contacts and premium listing access for 15 days from activation.</li>
+      <li>Auto-refresh add-on is optional and will refresh your listing weekly for the duration of your premium plan.</li>
+      <li>Cross-locking: Only premium seekers can contact premium owners and vice versa.</li>
+      <li>Free trial is available only for first-time users and is valid for 1 day.</li>
+      <li>All users must comply with the platform’s <a href="#">community guidelines</a> and <a href="#">privacy policy</a>.</li>
+      <li>Abuse of premium features may result in suspension or termination of your account.</li>
+      <li>Platform reserves the right to modify features and pricing at any time with prior notice.</li>
+    </ul>
+  </section>
+<style>
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Source Sans 3", sans-serif;
+}
+header{
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+  color: grey;
+  font-size: 13px;
+  padding: 10px;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  background-color: white;
+}
+
+.logo img{
+  height:40px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn {
+  padding: 5px ;
+  font-size: 13px;
+  border-radius: 2px;
+  cursor: pointer;
+  
+}
+.btn.outline{
+border: 1px solid grey;
+color:grey;
+background-color: white;
+align-items: center;
+}
+.btn.outline a{
+text-decoration: none;
+color: grey;
+}
+.btn.outline img{
+  height: 20px;
+  width: 20px;
+}
+
+.btn.solid {
+  background-color: #009587;
+  border: none;
+}
+.btn.solid a{
+  text-decoration: none;
+  color: white;
+}
+
+.divider {
+  color: #aaa;
+}
+a{
+  margin-right:5px;
+}
+
+/* logout */
+.profile-options{
+display:none;
+ position: relative;
+  align-items: center;
+  gap: 10px;
+  display: flex;
+}
+.profileName{
+  display:none; 
+  position:absolute;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.profile-name:hover {
+  background: #f0f0f0;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 120%; 
+  right: 0;
+  background: #fff;
+  min-width: 120px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  border-radius: 6px;
+  z-index: 100;
+  padding: 8px 0;
+}
+.dropdown-content a {
+  display: block;
+  padding: 10px 18px;
+  color: #222;
+  text-decoration: none;
+  font-size: 15px;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.dropdown-content a:hover {
+  background: #f0f0f0;
+}
+  .pricing-section {
+      text-align: center;
+      padding: 40px 10px 20px 10px;
+      background: #f8f8f8;
+    }
+    .pricing-section h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #e11d48;
+    }
+    .pricing-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-bottom: 2.5rem;
+    }
+    .plan-card {
+      background: #fff;
+      border: 1.5px solid #ddd;
+      border-radius: 16px;
+      padding: 30px 24px;
+      width: 320px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+      transition: box-shadow 0.2s, border 0.2s;
+      position: relative;
+    }
+    .plan-card.selected {
+      border: 2.5px solid #009688;
+      box-shadow: 0 8px 32px rgba(0,150,136,0.10);
+    }
+    .plan-card h3 {
+      font-size: 1.4rem;
+      color: #333;
+      margin-bottom: 0.7rem;
+    }
+    .price {
+      font-size: 1.8rem;
+      color: #009688;
+      margin: 15px 0 10px 0;
+      font-weight: 700;
+    }
+    .plan-card ul {
+      text-align: left;
+      padding-left: 0;
+      list-style: none;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 1.2rem;
+    }
+    .select-btn {
+      margin-top: 10px;
+      background: #009688;
+      color: #fff;
+      padding: 10px 24px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1.08rem;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    .select-btn.selected, .select-btn:hover {
+      background: #00796b;
+    }
+    .addon {
+      font-size: 0.98rem;
+      color: #666;
+      margin-top: 8px;
+      background: #e0f7fa;
+      border-radius: 6px;
+      padding: 5px 10px;
+      display: inline-block;
+    }
+    .comparison-section {
+      background: #fff;
+      border-radius: 14px;
+      max-width: 900px;
+      margin: 2rem auto 1.5rem auto;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      padding: 2rem 1rem;
+    }
+    .comparison-section h3 {
+      color: #e11d48;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0 auto;
+      font-size: 1.04rem;
+    }
+    .comparison-table th, .comparison-table td {
+      border: 1px solid #eee;
+      padding: 0.7rem 0.5rem;
+      text-align: center;
+    }
+    .comparison-table th {
+      background: #fbeff2;
+      color: #e11d48;
+      font-weight: 700;
+    }
+    .comparison-table td:first-child, .comparison-table th:first-child {
+      text-align: left;
+      background: #f8f8f8;
+      color: #222;
+      font-weight: 600;
+    }
+    .comparison-table .tick {
+      color: #009688;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    .comparison-table .cross {
+      color: #e11d48;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    .testimonial-section {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    .testimonial-section h3 {
+      color: #e11d48;
+      margin-bottom: 1.2rem;
+      font-size: 1.2rem;
+    }
+    .testimonials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+    .testimonial {
+      background: #fbeff2;
+      border-radius: 10px;
+      padding: 1.2rem 1rem;
+      width: 260px;
+      font-size: 1rem;
+      color: #444;
+      box-shadow: 0 1px 4px rgba(225,29,72,0.07);
+      position: relative;
+    }
+    .testimonial .stars {
+      color: #ffb300;
+      font-size: 1.1rem;
+      margin-bottom: 0.3rem;
+      display: block;
+    }
+    .testimonial .author {
+      margin-top: 0.7rem;
+      font-weight: 600;
+      color: #e11d48;
+      font-size: 0.98rem;
+    }
+    .trial-banner {
+      background: #e0f7fa;
+      color: #009688;
+      font-weight: 600;
+      border-radius: 8px;
+      padding: 0.8rem 1.2rem;
+      margin: 1.5rem auto 0.5rem auto;
+      max-width: 500px;
+      font-size: 1.08rem;
+      text-align: center;
+    }
+
+    .terms-section {
+  max-width: 900px;
+  margin: 2rem auto 3rem auto;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 2rem 1.5rem;
+  text-align: left;
+}
+.terms-section h3 {
+  color: #e11d48;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  text-align: center;
+}
+.terms-list {
+  list-style: disc inside;
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.7;
+  padding-left: 1.2rem;
+}
+.terms-list a {
+  color: #009688;
+  text-decoration: underline;
+}
+
+</style>
+<script src="script.js"></script>
+  </body>
+  </html>

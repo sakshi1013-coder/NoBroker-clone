@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nobroker</title>
+   <link href="style.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css2?family=Delius&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+       <div class="logo">
+      <img src="/asessts/nobroker logo.svg" alt="NoBroker Logo" >
+    </div>
+    <div class="navbar-right">
+      <button class="btn outline"><img src="https://img.icons8.com/ios/50/verified-account.png"> <a href="Getpremium.html">Get Premium</a></button>
+      <button class="btn solid"><a href="Post-properties.html" target="_blank">Post Your Properties</a></button>
+
+    <!-- signup -->
+<a id="openLogin">Login</a>
+<span class="divider">|</span>
+<a id="openSignup">Sign Up</a>
+
+<!-- login modal -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" id="closeLoginModal">&times;</span>
+    <h2>Login</h2>
+    <label for="loginNumber">Mobile Number:</label>
+    <input type="text" id="loginNumber" placeholder="Enter your Mobile Number" class="modal-input" required>
+    <button class="modal-btn" id="loginContinue">Continue</button>
+    <p class="modal-note">OTP will be sent to your number</p>
+  </div>
+</div>
+
+<!-- signup modal -->
+<div id="signupModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" id="closeSignupModal">&times;</span>
+    <h2>Sign Up</h2>
+    <label for="Name">Full Name:</label>
+    <input type="text" id="Name" placeholder="Enter your Full Name" class="modal-input" required>
+    <label for="Email">Email:</label>
+    <input type="email" id="Email" placeholder="Enter your Email" class="modal-input" required>
+    <label for="Number">Mobile Number:</label>
+    <input type="text" id="Number" placeholder="Enter your Mobile Number" class="modal-input" required>
+    <button class="modal-btn" id="Create">Create Account</button>
+  </div>
+</div>
+
+<div id="profileOptions" class="profile-options" style="display:none;">
+  <span class="profile-name" id="profileName">User</span>
+  <div class="dropdown">
+    <div class="dropdown-content">
+      <a href="#" id="logoutBtn">Logout</a>
+    </div>
+  </div>
+</div>
+<!-- end -->
+      <span class="divider">|</span>
+      <a>☰ Menu</a>
+    </div>
+    
+  </header>
+  <div class="start">
+  <p class="first">World's Largest NoBrokerage Property Site</p>
+  <div>
+    <p class="second"><img src="/asessts/living-room_16859027.png">Home Interiors <span class="line">|</span>
+      <img src="/asessts/opportunity_12650405.png">45-Days Guarantee</p>
+  </div>
+
+  <div class="property-tabs">
+    <div class="tab" data-tab="buy">Buy</div>
+    <div class="tab" data-tab="rent">Rent</div>
+    <div class="tab" data-tab="commercial">Commercial</div>
+    <div class="tab" data-tab="pg">PG</div>
+    <div class="tab" data-tab="plot">Plot</div>
+  </div>
+
+  <div class="search-row">
+    <div class="location-select">
+         <select id="city" name="city" class="city-select">
+          <option value="mum">Mumbai</option>
+          <option value="pn">Pune</option>
+          <option value="banglo">Banglore</option>
+          <option value="noida">Noida</option>
+          <option value="chen">Chennai</option>
+          <option value="gurgoan">Gurgoan</option>
+          <option value="hb">Hydrabad</option>
+          <option value="delhi">Delhi</option>
+          <option value="gn">Great Noida</option>
+          <option value="ghazi">Ghaziabad</option>
+          <option value="fd">Faridabad</option>
+        </select>
+        <input type="text" placeholder="Search upto 3 localities or landmarks " class="location-input">
+      <button class="search-btn">
+        <div class="searchimg">
+          <img src="/asessts/searchIcon.svg" alt="search">
+        </div><a href="Search.html">Search</a>
+      </button>
+    </div>
+  </div>
+
+<div class="combined-filters">
+  <div class="property-type">
+    <label>
+      <input type="radio" name="propertyType" checked>
+      <span class="custom-radio"></span> Full House
+    </label>
+    <label>
+      <input type="radio" name="propertyType">
+      <span class="custom-radio"></span> Land/Plot
+    </label>
+  </div>
+
+  <select class="filter-dropdown">
+    <option disabled selected>BHK Type</option>
+    <option>1 RK</option>
+    <option>1 BHK</option>
+    <option>2 BHK</option>
+    <option>3 BHK</option>
+    <option>4 BHK</option>
+    <option>4+ BHK</option>
+  </select>
+
+  <select class="filter-dropdown">
+    <option disabled selected>Property Status</option>
+    <option>Ready to Move</option>
+    <option>Under Construction</option>
+  </select>
+
+  <label class="checkbox-label">
+    <input type="checkbox" />
+    <span class="custom-checkbox"></span>
+    New Builder Projects
+  </label>
+</div>
+
+<div class="property-owner-section">
+  <div class="divider-text">
+    <span>Are you a Property Owner?</span>
+  </div>
+  <button class="ad-button">Post Free Property Ad</button>
+ </div>
+</div>
+
+
+ <div class="loan-strip">
+  <div class="loan-strip-content">
+    <img src="/asessts/icons8-loan-64.png" alt="loan icon" class="loan-icon" />
+    <span>Do you know how much <strong>loan</strong> you can get? Get maximum with <strong>NoBroker</strong></span>
+    <button class="eligibility-btn">Check Eligibility</button>
+  </div>
+</div>
+
+<section class="services">
+    <div class="service-item">
+      <span class="badge">New</span>
+      <img src="https://img.icons8.com/ios/64/building.png" alt="Builder Projects" />
+      <p><a href="https://www.nobroker.in/property-investment/mumbai?nbFr=HOME-TILE-PI" target="_blank">Builder Projects</a></p>
+    </div>
+    <div class="service-item">
+      <span class="badge">New</span>
+      <img src="https://img.icons8.com/ios/64/contract.png" alt="Sale Agreement" />
+      <p><a href="https://www.nobroker.in/sales-agreement-in-bangalore?utm_campaign=saleagreement&utm_source=nbhome" target="_blank">Sale Agreement</a></p>
+    </div>
+    <div class="service-item">
+      <img src="https://img.icons8.com/?size=100&id=zg3AKsXtHQ3Z&format=png&color=000000" alt="Home Loan" />
+      <p><a href="https://www.nobroker.in/home-loan?nbFr=HOME-TILE-BUY&utm_campaign=homeloans&utm_source=nbhome"target="_blank">Home Loan</a></p>
+    </div>
+    <div class="service-item">
+      <img src="https://img.icons8.com/?size=100&id=5272&format=png" alt="Property Legal Services" />
+      <p><a href="https://www.nobroker.in/sales-agreement-in-bangalore?nbFr=HOME-TILE-BUY&utm_campaign=legaldocs&utm_source=nbhome" >Property Legal Services</a></p>
+    </div>
+    <div class="service-item">
+      <span class="badge sale">Sale is live!</span>
+      <img src="https://img.icons8.com/ios/64/interior.png" alt="Home Interiors" />
+      <p><a href="https://www.nobroker.in/interiors/?utm_source=nbhome&utm_campaign=interiors" target="_blank">Home Interiors</a></p>
+    </div>
+    <div class="service-item">
+      <img src="https://img.icons8.com/ios/64/passport.png" alt="NRI" />
+      <p><a href="https://www.nobroker.in/prophub/nris/properties-in-india?utm_source=nri_home&isHybrid=false" target="_blank">NoBroker For NRIs</a></p>
+    </div>
+  </section>
+
+  <section class="why">
+    <h2>Why Use NoBroker</h2>
+    <div class="why-items">
+      <div class="why-item">
+        <img src="https://img.icons8.com/ios/64/user-male-circle.png" alt="Avoid Brokers" />
+        <h3>Avoid Brokers</h3>
+        <p>We directly connect you to verified owners to save brokerage</p>
+      </div>
+      <div class="why-item">
+        <img src="https://img.icons8.com/ios/64/todo-list.png" alt="Free Listing" />
+        <h3>Free Listing</h3>
+        <p>Easy listing process. Also using WhatsApp</p>
+      </div>
+      <div class="why-item">
+        <img src="https://img.icons8.com/ios/64/like--v1.png" alt="Shortlist" />
+        <h3>Shortlist without Visit</h3>
+        <p>Extensive Information makes it easy</p>
+      </div>
+      <div class="why-item">
+        <img src="https://img.icons8.com/ios/64/contract.png" alt="Rental Agreement" />
+        <h3>Rental Agreement</h3>
+        <p>Assistance in creating Rental agreement & Paper work</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="builder-plan">
+  <div class="builder-content">
+    <h2>NoBroker Business Assist Plan For Builders</h2>
+    <div class="builder-wrapper">
+      <img
+        src="https://img.icons8.com/carbon-copy/100/building.png"
+        alt="Buildings"
+      />
+      <div class="builder-text">
+        <p>Get in touch with us to Sell or Rent Your Projects</p>
+        <button class="enquire-btn">Enquire Now</button>
+        <small>For Builder Enquiries: +91 91080 50400</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="impact-section">
+  <h2 class="impact-heading">We Make A Difference</h2>
+  <div class="stats">
+    <div>
+      <div class="impact-item">₹130 cr+</div>
+      <div class="impact-label">Brokerage saved monthly</div>
+    </div>
+     <div>
+      <div class="impact-item">30 lakh+</div>
+      <div class="impact-label">Customers connected monthly</div>
+    </div>
+     <div>
+      <div class="impact-item">2 Lakh+</div>
+      <div class="impact-label">New listings Monthly</div>
+    </div>
+  </div>
+  </section>
+  <section class="video-section">
+  <h2>Our Customers Loves Us</h2>
+  <div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/0ChlgxhXVws?si=ALs2QqL2b-s5_cRy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+
+  <section class="testmonials">
+    <div class="testimonial-cards">
+      <div class="testimonial-card">
+        <div> 
+          <img src="/asessts/reviewerpfp.jpg" alt="sumit">
+          <h4>Sumit Raibhandar</h4>
+            <div class="stars">★★★★★</div>
+        </div>
+        <h5> Helps us find god properties</h5>
+        <p>"The site really helps us to find good properties in the least amount of time without any headache of brokerage..."</p>
+      </div>
+      <div class="testimonial-card">
+        <div> 
+          <img src="/asessts/reviewerpfp.jpg" alt="rani">
+          <h4>Rani Rajkumar</h4>
+            <div class="stars">★★★★</div>
+        </div>
+        <h5> It's a nice experience</h5>
+        <p>"It was a nice experience with Nobroker. They helped me to find a new home to stay as it was difficult for me."</p>
+      </div>
+      <div class="testimonial-card">
+        <div> 
+          <img src="/asessts/reviewerpfp.jpg" alt="sanjeev">
+          <h4>Sanjeev Rathod</h4>
+            <div class="stars">★★★★</div>
+        </div>
+        <h5>Found Great place to stay via NoBroker</h5>
+        <p>"NoBroker provides a great place to stay with safe environment. if they show you something about property it.."</p>
+      </div>
+    </div>
+  </section>
+<a class="more-testimonials" href="#">More Testimonials</a>
+</section>
+
+<section class="app-download">
+  <h2 >Find A New Home On The Go</h2>
+  <p>Download our app<br>Where convenience is at your fingertip</p>
+  <div>
+    <a href="#"><img src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/50/external-square-play-button-for-android-application-store-logo-color-tal-revivo.png" alt="Google Play" ></a>
+    <a href="#"><img src="https://img.icons8.com/ios-filled/50/apple-app-store--v2.png" alt="App Store" ></a>
+  </div>
+</section>
+
+<nav class="footer-nav">
+<span>Properties & Flats for Sale</span>
+<span>Flats for Rents</span>
+<span>Flatmates</span>
+<span>Miscellaneous</span>
+<span>Commercial</span>
+<span>New Projects & Plots</span>
+<span>Independent Houses & Villas</span>
+</nav>
+
+<section class="property-links">
+  <div>
+    <h4>Flats for Sale in Banglore</h4>
+    <ul>
+      <li>Flats for sale in Koramangala</li>
+      <li>Flats for sale in HSR Layout</li>
+    </ul>
+  </div>
+  <div>
+    <h4>Flats for Rent in Mumbai</h4>
+    <ul>
+      <li>Flats for sale in Andheri</li>
+      <li>Flats for sale in Navi Mumbai</li>
+    </ul>
+  </div>
+  <div>
+    <h4>Flats for Rent in Pune</h4>
+    <ul>
+      <li>Flats for sale in Baner</li>
+      <li>Flats for sale in Kalyani Nagar</li>
+    </ul>
+    <div>
+      <h4>Flats for Rent in Chennai</h4>
+      <ul>
+        <li>Flats for sale in Anna Nagar</li>
+        <li>Flats for sale in T Nagar</li>
+      </ul>
+</section>
+<section class="nobroker-services">
+  <h3>NoBroker services</h3>
+  <div class="services-flex">
+    <div>
+      <h4>Buy</h4>
+      <ul>
+        <li>Property Legal Services</li>
+        <li>Home Loan </li>
+        <li>Apply Home Loan</li>
+        <li>Property Buyers Guide</li>
+        <li>EMI Calculator</li>
+        <li>Sale Agreement</li>
+        <li>Builder Projects</li> 
+        <li>Interior design tips</li>
+        <li>Home Interiors</li>
+        <li>Home Loan Eligibility</li>
+        <li>Kitchen Services</li>
+        <li>Bill Payment </li>
+        <li>NRI RealEstate</li>
+        <li>Property Buyers</li>
+
+      </ul>
+    </div>
+    <div>
+      <h4>Rent</h4>
+      <ul>
+        <li>Rental Agreement</li>
+        <li>Pay Rent</li>
+        <li>Packers and Movers</li>
+        <li>Property Management </li>
+        <li>Interior</li>
+        <li>Plumbing</li>
+        <li>Hardware</li>
+        <li>Electrician</li>
+        <li>Home Cleaning</li>  
+        <li>Home Painting</li>
+        <li>Tenant Guide</li>
+        <li>Packers Movers</li>
+        <li>Notary</li>
+        <li>Rent Service Q&A</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div>
+    <h4>Find Property</h4>
+    <p>Select from thousands of options, without brokerage.</p>
+    <button>Find Now</button>
+  </div>
+  <div class="List-Property">
+    <div>
+    <h4 >List Your Property</h4>
+    <p>For Free. Without any brokerage.</p>
+    <button>Free Posting</button>
+  </div></div>
+  
+</section>
+<footer class="main-footer">
+  <nav>
+    <a href="#">About Us</a> | 
+    <a href="#">Careers</a> | 
+    <a href="#">Terms & Conditions</a> | 
+    <a href="#">Privacy Policy</a> | 
+    <a href="#">Testimonials</a> | 
+    <a href="#">Sitemap</a> | 
+    <a href="#">FAQs</a>
+  </nav>
+  <div class="footer-app-icons">
+    <img src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/50/external-square-play-button-for-android-application-store-logo-color-tal-revivo.png" alt="Google Play">
+    <img src="https://img.icons8.com/ios-filled/50/apple-app-store--v2.png" alt="App Store">
+  </div>
+  <div>
+    <small>&copy; 2013–25 NoBroker Clone</small>
+  </div>
+</footer>
+  <script src="script.js"></script>
+</body>
+</html>

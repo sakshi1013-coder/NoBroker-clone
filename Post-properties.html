@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nobroker</title>
+   <link href="style.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css2?family=Delius&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+       <div class="logo">
+      <img src="/asessts/nobroker logo.svg" alt="NoBroker Logo" >
+    </div>
+    <div class="navbar-right">
+      <button class="btn outline"><img src="/asessts/payrent.png"> | Pay rent</button>
+      <button class="btn solid"><a href="Post-properties.html" target="_blank">Post Your Properties</a></button>
+
+    <!-- signup -->
+<a id="openLogin">Login</a>
+<span class="divider">|</span>
+<a id="openSignup">Sign Up</a>
+
+<!-- login modal -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" id="closeLoginModal">&times;</span>
+    <h2>Login</h2>
+    <label for="loginNumber">Mobile Number:</label>
+    <input type="text" id="loginNumber" placeholder="Enter your Mobile Number" class="modal-input" required>
+    <button class="modal-btn" id="loginContinue">Continue</button>
+    <p class="modal-note">OTP will be sent to your number</p>
+  </div>
+</div>
+
+<!-- signuo modal -->
+<div id="signupModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" id="closeSignupModal">&times;</span>
+    <h2>Sign Up</h2>
+    <label for="Name">Full Name:</label>
+    <input type="text" id="Name" placeholder="Enter your Full Name" class="modal-input" required>
+    <label for="Email">Email:</label>
+    <input type="email" id="Email" placeholder="Enter your Email" class="modal-input" required>
+    <label for="Number">Mobile Number:</label>
+    <input type="text" id="Number" placeholder="Enter your Mobile Number" class="modal-input" required>
+    <button class="modal-btn" id="Create">Create Account</button>
+  </div>
+</div>
+
+<div id="profileOptions" class="profile-options" style="display:none;">
+  <span class="profile-name" id="profileName">User</span>
+  <div class="dropdown">
+    <div class="dropdown-content">
+      <a href="#" id="logoutBtn">Logout</a>
+    </div>
+  </div>
+</div>
+
+
+      <span class="divider">|</span>
+      <a>☰ Menu</a>
+    </div>
+  </header>
+<!-- end -->
+<section class="property-post-section">
+  <h1>Sell or Rent your Property For Free</h1>
+  <div class="property-post-container">
+    <div class="property-post-info">
+      <h3>Why Post through us ?</h3>
+      <ul>
+        <li><img src="/asessts/no brokerage.png brokerage.png" alt=""> Zero Brokerage</li>
+        <li><img src="/asessts/tenents.png" alt=""> Faster Tenants</li>
+        <li><img src="/asessts/tenants connections.svg" alt=""> 10 lac tenants/buyers connections</li>
+      </ul>
+      <div class="testimonial">
+        <strong>30 Lac+ Home Owners Trust Us</strong>
+        <p>
+          After posting my property ads on No broker they provided me with an easy way to rent out my apartment, it was otherwise very difficult for me to do. NoBroker found the right people whom I can trust for my rental property.
+        </p>
+        <span><b>Anil</b> | Mumbai</span>
+    </div>
+  </div>
+  <form class="property-post-form">
+    <div class="form-row">
+      <input type="text" placeholder="enter your name" required>
+      <input type="email" placeholder="enter your email" required>
+    </div>
+      <div class="form-row">
+        <div class="phone-input">
+          <span class="flag">🇮🇳 +91</span>
+          <input type="text" placeholder="Mobile Number" required>
+        </div>
+    <select required>
+      <option value="">Select City</option>
+      <option>Mumbai</option>
+      <option>Banglore</option>
+      <option>Pune</option>
+      <option>Delhi</option>
+    </select>
+    </div>
+    <div class="whatsapp-row">
+        <label>
+          <input type="checkbox" checked>
+          Get updates on <img src="/asessts/whatsapp.png" alt="WhatsApp" style="height:18px;vertical-align:middle;"> WhatsApp
+        </label>
+      </div>
+    <div class="property-type-tabs">
+  <button type="button" id="tab-residential" class="active">Residential</button>
+  <button type="button" id="tab-commercial">Commercial</button>
+  <button type="button" id="tab-land">Land/Plot <span class="new-badge">New</span></button>
+</div>
+<div id="property-type-content">
+</div>
+  
+    <button class="post-btn" type="submit"><a href="Posting-property.html">Start Posting Your Ad For FREE</a></button>
+  </form>
+  </div>
+</section>
+<section class="how-it-works-section">
+  <!-- Top Features -->
+  <div class="how-it-works-features">
+    <div class="feature">
+      <img src="/asessts/NoCalls.png" alt="No Calls From Brokers">
+      <h4>No Calls From Brokers</h4>
+      <p>Your information is kept confidential and you no longer have to worry about call from brokers.</p>
+    </div>
+    <div class="feature">
+      <img src="/asessts/Verified.png" alt="Verified Tenants">
+      <h4>Verified Tenants</h4>
+      <p>Thanks to our technology, only verified and genuine tenants can call you.</p>
+    </div>
+    <div class="feature">
+      <img src="/asessts/SaveBrokerage.png" alt="Save Brokerage">
+      <h4>Save Brokerage</h4>
+      <p>No Brokers means No Brokerage! Buy yourself a gift.</p>
+    </div>
+  </div>
+
+  <!-- How it Works Steps -->
+  <h2 class="how-it-works-title">How it Works</h2>
+  <div class="how-it-works-steps">
+    <div class="step">
+      <img src="/asessts/search.jpg" alt="Simple Listing Process">
+      <h4>Simple Listing Process</h4>
+      <p>As an owner you can list your property in a few minutes. Just fill out our super simple form. Your property will go live after verification.</p>
+    </div>
+    <div class="step">
+      <img src="/asessts/phonecall.jpg" alt="Tenant Selects Property and Schedules an Appointment">
+      <h4>Tenant Selects Property and Schedules an Appointment</h4>
+      <p>If a tenant likes your property they will request for your contact details. Both parties will receive contact information and then arrange for a visit.</p>
+    </div>
+    <div class="step">
+      <img src="/asessts/HandShake.jpg" alt="Deal Closure">
+      <h4>Deal Closure</h4>
+      <p>Owner and tenant meet to close the deal directly. NoBroker can help create a rental agreement and deliver it to your doorstep.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Rent or Sell Property Online Section -->
+<section class="rent-sell-section">
+  <h2>Rent or Sell Property Online Easily With NoBroker</h2>
+  <p>
+    Looking to sell property online or list your property for rent? NoBroker makes it simple, whether you want to sell a house, post a property for rent, or even sell land online, you can do it all without the hassle of dealing with middlemen, thanks to free property ad listings at NoBroker.
+  </p>
+  <p>
+    NoBroker is designed to cater to all your needs, from house rent advertisements to selling plots online. With NoBroker, you can quickly and easily post free property ads, explore the best property-selling platform, and connect with potential buyers or tenants that match your needs directly. Whether you're a homeowner wanting to sell your house or a landlord aiming to <b>rent out a property</b>, NoBroker is your go-to platform for all things real estate.
+  </p>
+  <table class="features-table">
+    <thead>
+      <tr>
+        <th>FEATURE</th>
+        <th>DESCRIPTION</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Zero Brokerage</td>
+        <td>Buy, sell or rent your property without paying hefty commissions to agents.</td>
+      </tr>
+      <tr>
+        <td>Free Listing</td>
+        <td>Post your property advertisement for FREE on NoBroker’s platform. Whether you want to sell property online or rent out property, you can do it without any charges.</td>
+      </tr>
+      <tr>
+        <td>Easy and Quick Process</td>
+        <td>With NoBroker, posting your rent advertisement or listing a property for sale is seamless. Our platform guides you through simple steps, ensuring your free property listing is attractive and effective.</td>
+      </tr>
+      <tr>
+        <td>Increased Property Visibility</td>
+        <td>NoBroker’s extensive online presence ensures that your property advertisement gets maximum visibility, increasing the chances of finding the right tenants or buyers for your property.</td>
+      </tr>
+      <tr>
+        <td>Dedicated Support</td>
+        <td>NoBroker’s dedicated team helps you with the process, ensuring that your property advertisement gets the visibility it deserves.</td>
+      </tr>
+      <tr>
+        <td>Tenant/Buyer Background Verification</td>
+        <td>NoBroker prioritizes your security by verifying interactions and ensuring that only genuine tenants or buyers can contact you.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- Types of Property Listings Section -->
+<section class="property-types-section">
+  <h2>Types of Property Listings Available on NoBroker</h2>
+  <div class="property-type-block">
+    <h3>1. Residential Properties</h3>
+    <p>If you are looking to rent out property or sell your house, NoBroker provides a seamless solution. You can easily create a listing for various residential types, including:</p>
+    <ul>
+      <li><b>Homes for Rent or Sale:</b> NoBroker’s platform makes it straightforward to post property for rent or sell house online, reaching a broad audience without any brokerage fees.</li>
+      <li><b>PG or Hostel Rentals:</b> Have a paying guest accommodation or hostel space? List it on NoBroker with relevant details. Your rent advertisement will be live in minutes, attracting potential tenants quickly.</li>
+    </ul>
+  </div>
+  <div class="property-type-block">
+    <h3>2. Commercial Properties</h3>
+    <p>Sell or rent your commercial property effortlessly on NoBroker’s platform, designed to accommodate a range of business spaces. Whether it's office space, a co-working setup, a retail shop, a showroom, or even a warehouse, you can easily list your commercial property for sale or rent.</p>
+  </div>
+  <div class="property-type-block">
+    <h3>3. Plots</h3>
+    <p>NoBroker makes it easy for you to sell land online with a user-friendly listing system. When you list your plot, you can include important details like its location, size, shape, and other relevant information.</p>
+    <p>If you want to sell property online or find the right tenant quickly, NoBroker offers a seamless, easy-to-use, and cost-effective solution. With zero brokerage, dedicated support, and easy listing features, you can connect directly with potential buyers or tenants.</p>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section">
+  <h2>Frequently asked questions</h2>
+  <p>
+    If you are looking to rent or sell your individual house, flat, or commercial property the first thing you need to do is decide how to find a buyer or tenant. Now, you can’t always depend on your immediate contacts to help you get the job done, you need to cast a wider net, to get more options and to get better offers.
+  </p>
+  <p>
+    Here are a few frequently asked questions and answers about house rent, house selling, commercial property rent and commercial property selling. This should give you an idea as to how simple the process is, and what you need to be aware of.
+  </p>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-question">Is it free to Post home for rent on NoBroker's List Your Property page?<span class="faq-plus">+</span></button>
+      <div class="faq-answer">Yes, it is absolutely free to post your home for rent on NoBroker’s List Your Property page.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Why should I use NoBroker to advertise my home rental?<span class="faq-plus">+</span></button>
+      <div class="faq-answer">NoBroker helps you reach more tenants directly, without any brokerage.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Can I advertise both residential and commercial properties on NoBroker's List Your Property page?<span class="faq-plus">+</span></button>
+      <div class="faq-answer">Yes, you can advertise both residential and commercial properties on NoBroker.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">How does NoBroker ensure the security of my property listings and interactions with potential tenants or buyers?<span class="faq-plus">+</span></button>
+      <div class="faq-answer">NoBroker verifies all users and interactions to ensure your security.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Can I receive extra support from NoBroker for Renting or selling my flat online?<span class="faq-plus">+</span></button>
+      <div class="faq-answer">Yes, NoBroker provides dedicated support for all your property needs.</div>
+    </div>
+  </div>
+</section>
+
+
+  <script src="script.js"></script>
+  </body>
+  </html>
