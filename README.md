@@ -27,7 +27,7 @@ CSS – Styling and layout (responsive design)
 JavaScript – Interactivity, feature logic, premium membership control
 
 🚀 Live Demo
-🔗 View Live Project (Replace with your live link like GitHub Pages, Netlify, or Vercel)
+🔗 
 
 📸 Screenshots
 Home Page	Premium Tag	Property Stats
